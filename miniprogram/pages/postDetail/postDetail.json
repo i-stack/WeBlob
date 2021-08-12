@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "mp-loading": "weui-miniprogram/loading/loading",
+    "mp-gallery": "weui-miniprogram/gallery/gallery",
+    "towxml": "/towxml/towxml"
+  }
+}

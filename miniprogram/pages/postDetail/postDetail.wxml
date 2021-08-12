@@ -1,0 +1,14 @@
+<wxs src="../../pipe.wxs" module="pipe" />
+<mp-loading type="circle" show="{{isLoading}}"></mp-loading>
+<mp-gallery show="{{show}}" img-urls="{{covers}}" showDelete="{{false}}" current="{{current}}"></mp-gallery>
+
+<view class="banner banner-image" style="background-image: url({{cover}});">
+    <view class="banner-info" style="width: 80%;">
+        <view class="banner-title">{{title}}</view>
+        <view>发表于 {{pipe.datePipe(date)}} | 更新于 {{pipe.datePipe(updated)}}</view>
+    </view>
+</view>
+
+<view class="post-content">
+    <towxml nodes="{{post}}"></towxml>
+</view>

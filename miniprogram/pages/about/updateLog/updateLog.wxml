@@ -1,0 +1,19 @@
+<view class="release-list">
+    <view class="release">
+        <view class="release-info">
+            <view class="release-latest">latest release</view>
+            <view class="release-commit">
+                <mp-icon icon="pencil" color="#9c9c9c" size="{{16}}"></mp-icon>
+                35cb437
+            </view>
+        </view>
+        <view class="release-content">
+            <view class="release-content-title">v1.0.0</view>
+            <view class="release-time">2021/08/12</view>
+            <view class="content-category">Features</view>
+            <view class="content-item">
+                <view>1. 初版上线，信息源设定为GitHub Pages</view>
+            </view>
+        </view>
+    </view>
+</view>

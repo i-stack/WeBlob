@@ -1,0 +1,18 @@
+function datePipe(str) {
+    if (!str || str.length == 0) {
+        return 'Undefined';
+    }
+    return getDate(str).toLocaleDateString()
+}
+
+function tagPipe(tag) {
+    if (tag.constructor && tag.constructor == 'Array' && tag.length && typeof tag[0] === 'object') {
+        return tag.map(function (item) {
+            return item.name
+        })
+    }
+    return tag
+}
+
+module.exports.datePipe = datePipe;
+module.exports.tagPipe = tagPipe;

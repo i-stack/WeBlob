@@ -1,0 +1,42 @@
+.banner-image {
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    animation: animate 45s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 400%;
+    }
+}
+
+.about-section {
+    color: #9c9c9c;
+    border-radius: 15rpx;
+    margin: 20rpx 15rpx 0;
+    background: rgba(255, 255, 255, .9);
+}
+
+.about-info {
+    height: 84rpx;
+    display: flex;
+    align-items: center;
+    padding: 0 20rpx;
+}
+
+.about-info:nth-child(n+2) {
+    border-top: solid 1rpx #d8d8d8;
+}
+
+.about-image {
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.about-icon {
+    margin: 0 0 0 auto;
+}

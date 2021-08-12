@@ -1,0 +1,41 @@
+.post-list {
+    margin: 20rpx 15rpx 0;
+}
+
+.post {
+    display: flex;
+    align-items: center;
+    border-top: solid 1rpx #d8d8d8;
+    height: 180rpx;
+}
+
+.post-image {
+    background-color: pink;
+    height: 160rpx;
+    width: 35%;
+    border-radius: 10rpx;
+    margin-right: 20rpx;
+}
+
+.post-info {
+    width: calc(60% - 20rpx);
+}
+
+.post-title {
+    font-weight: 600;
+    font-size: 36rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.post-time {
+    color: #9c9c9c;
+}
+
+.post-tag {
+    color: #9c9c9c;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

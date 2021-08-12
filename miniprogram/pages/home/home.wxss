@@ -1,0 +1,22 @@
+.swiper-title {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    width: 80%;
+    color: white;
+    text-align: center;
+}
+
+.swiper-image {
+    height: 100%;
+    width: 100%;
+    border-radius: 15rpx;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.footer-tip {
+    width: fit-content;
+    margin: 20rpx auto;
+    color: #9c9c9c;
+}

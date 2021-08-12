@@ -1,0 +1,8 @@
+<view class="content-section">
+    <view class="content-title">标签 - {{tagList.length}}</view>
+    <view class="weui-flex" style="flex-wrap: wrap;">
+        <text wx:for="{{tagList}}" wx:key="*this" class="weui-flex__item" decode="{{true}}" bindtap="navigateToPostList"
+            data-tag="{{item}}"
+            style="color: {{colorList[index]}}; line-height: 70rpx;">{{item}}&nbsp;&nbsp;&nbsp;</text>
+    </view>
+</view>

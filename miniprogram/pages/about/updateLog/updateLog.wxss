@@ -1,0 +1,45 @@
+.release {
+    display: flex;
+}
+
+.release-info {
+    width: 30%;
+    margin-top: 50rpx;
+    margin-right: 20rpx;
+}
+
+.release-latest {
+    float: right;
+    color: #22863a;
+    border: solid 1rpx #22863a;
+    border-radius: 20rpx;
+    padding: 0 10rpx;
+}
+
+.release-commit {
+    float: right;
+    color: #9c9c9c;
+    line-height: 70rpx;
+}
+
+.release-content {
+    border-left: solid 4rpx #d8d8d8;
+    padding-left: 20rpx;
+    padding-top: 40rpx;
+    width: calc(65% - 20rpx);
+}
+
+.release-content-title {
+    color: #3289FF;
+    font-size: 40rpx;
+}
+
+.release-time {
+    color: #9c9c9c;
+}
+
+.content-category {
+    font-weight: 600;
+    margin: 20rpx 0;
+    border-bottom: solid 1rpx #d8d8d8;
+}

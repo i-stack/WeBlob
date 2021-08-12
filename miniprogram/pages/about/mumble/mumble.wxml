@@ -1,0 +1,10 @@
+<view class="content-section">
+    <view class="content-title">碎碎念|ω•`)</view>
+    <view>
+        <view class="content">欢迎使用我的第一个小程序。</view>
+        <view class="content">小程序的内容来源于本人博客。博客基于Hexo搭建，部署在GitHub Pages和Vercel上，主题用的是Butterfly。</view>
+        <view class="content">博客更新随缘，内容随缘，会不会被人发现也随缘ヾ(●´∇｀●)ﾉ内容包括但不限于前端知识、心理学、读书笔记、金融。</view>
+        <view class="content">我只是一只两年前端经验的菜鸟，第一次写小程序，发现小程序静态页面也不怎么难嘛_(:3 」∠)_</view>
+        <view class="content">本项目已开源，如果你觉得有帮助，不妨点个小星星(●'◡'●)ﾉ♥</view>
+    </view>
+</view>

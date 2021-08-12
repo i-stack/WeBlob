@@ -1,0 +1,15 @@
+<view class="banner">
+    <swiper indicator-dots="{{true}}" indicator-active-color="#3289FF" autoplay="{{true}}" circular="{{true}}"
+        style="height: 400rpx;">
+        <swiper-item wx:for="{{swiperList}}" wx:key="title" bindtap="navigateToPostDeatail" data-path="{{item.path}}">
+            <view class="swiper-image" style="background-image: url({{item.cover}});">
+                <text class="swiper-title banner-title">{{item.title}}</text>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>
+
+<post-list postList="{{postList}}"></post-list>
+
+<view class="footer-tip" hidden="{{!isLoading}}">加载中 *⸜( •ᴗ• )⸝*</view>
+<view class="footer-tip" hidden="{{!isLoadingComplete}}">没有更多啦 ╮(╯▽╰)╭</view>

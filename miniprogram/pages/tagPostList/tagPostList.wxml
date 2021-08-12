@@ -1,0 +1,2 @@
+<view class="tag-title">包含标签 {{tag}} 的文章</view>
+<post-list postList="{{postList}}"></post-list>

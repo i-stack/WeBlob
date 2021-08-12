@@ -1,0 +1,17 @@
+<wxs src="../../pipe.wxs" module="pipe" />
+<view class="post-list">
+    <view class="post" wx:for="{{postList}}" wx:key="title" bindtap="navigateToPostDeatail" data-path="{{item.path}}">
+        <image src="{{item.cover}}" class="post-image" lazy-load="{{true}}"></image>
+        <view class="post-info">
+            <view class="post-title">{{item.title}}</view>
+            <view class="post-time">
+                <mp-icon icon="time" color="#9c9c9c" size="{{16}}"></mp-icon>
+                {{pipe.datePipe(item.updated)}}
+            </view>
+            <view class="post-tag">
+                <mp-icon icon="tag" color="#9c9c9c" size="{{16}}"></mp-icon>
+                {{pipe.tagPipe(item.tags)}}
+            </view>
+        </view>
+    </view>
+</view>

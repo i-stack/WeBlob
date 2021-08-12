@@ -1,0 +1,49 @@
+{
+    "cloud": true,
+    "pages": [
+        "pages/home/home",
+        "pages/tag/tag",
+        "pages/about/home/home",
+        "pages/about/mumble/mumble",
+        "pages/about/updateLog/updateLog",
+        "pages/postDetail/postDetail",
+        "pages/tagPostList/tagPostList"
+    ],
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "iconPath": "/images/home.png",
+                "selectedIconPath": "/images/home-active.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/tag/tag",
+                "iconPath": "/images/tag.png",
+                "selectedIconPath": "/images/tag-active.png",
+                "text": "标签"
+            },
+            {
+                "pagePath": "pages/about/home/home",
+                "iconPath": "/images/user.png",
+                "selectedIconPath": "/images/user-active.png",
+                "text": "关于"
+            }
+        ],
+        "color": "#999",
+        "backgroundColor": "#fff",
+        "borderStyle": "black",
+        "selectedColor": "#3289FF"
+    },
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#3289FF",
+        "navigationBarTitleText": "美丽新世界",
+        "navigationBarTextStyle": "white"
+    },
+    "sitemapLocation": "sitemap.json",
+    "style": "v2",
+    "useExtendedLib": {
+        "weui": true
+    }
+}
