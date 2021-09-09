@@ -11,7 +11,7 @@
 
 .post-image {
     background-color: pink;
-    height: 160rpx;
+    height: 145rpx;
     width: 35%;
     border-radius: 10rpx;
     margin-right: 20rpx;

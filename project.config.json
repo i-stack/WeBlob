@@ -14,7 +14,7 @@
         "autoAudits": true,
         "showShadowRootInWxmlPanel": true,
         "scopeDataCheck": false,
-        "uglifyFileName": false,
+        "uglifyFileName": true,
         "checkInvalidKey": true,
         "checkSiteMap": true,
         "uploadWithSourceMap": true,
@@ -38,7 +38,7 @@
     },
     "appid": "wxdaeac3d4e716c9b9",
     "projectname": "WeBlog",
-    "libVersion": "2.19.1",
+    "libVersion": "2.19.3",
     "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
     "condition": {
         "search": {

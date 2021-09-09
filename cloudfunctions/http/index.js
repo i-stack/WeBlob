@@ -63,13 +63,14 @@ exports.main = async (event, context) => {
                 }
             })
         case 'postDetail':
-            const url = 'https://huangruoqiu.github.io/' + event.url
+            const url = 'https://huangruoqiu.github.io/' + encodeURI(event.url)
             return await rp(url)
                 .then(res => {
                     return JSON.parse(res)
                 })
                 .catch(err => {
                     console.error('获取文章详情失败', err)
+                    throw err
                 })
     }
 }

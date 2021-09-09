@@ -4,7 +4,7 @@
             <view class="release-latest">latest release</view>
             <view class="release-commit">
                 <mp-icon icon="pencil" color="#9c9c9c" size="{{16}}"></mp-icon>
-                35cb437
+                b7bd09b
             </view>
         </view>
         <view class="release-content">

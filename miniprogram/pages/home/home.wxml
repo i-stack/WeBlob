@@ -1,10 +1,8 @@
 <view class="banner">
     <swiper indicator-dots="{{true}}" indicator-active-color="#3289FF" autoplay="{{true}}" circular="{{true}}"
-        style="height: 400rpx;">
+        style="height: 410rpx;">
         <swiper-item wx:for="{{swiperList}}" wx:key="title" bindtap="navigateToPostDeatail" data-path="{{item.path}}">
-            <view class="swiper-image" style="background-image: url({{item.cover}});">
-                <text class="swiper-title banner-title">{{item.title}}</text>
-            </view>
+            <view class="swiper-image" style="background-image: url({{item.cover}});"></view>
         </swiper-item>
     </swiper>
 </view>

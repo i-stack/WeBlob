@@ -71,7 +71,7 @@ Page({
                 title: '',
                 date: '',
                 updated: '',
-                cover: 'https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg',
+                cover: 'https://huangruoqiu.github.io/img/404.jpg',
                 covers: []
             })
         })

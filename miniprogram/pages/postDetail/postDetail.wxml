@@ -3,13 +3,15 @@
 <mp-gallery show="{{show}}" img-urls="{{covers}}" showDelete="{{false}}" current="{{current}}"></mp-gallery>
 
 <view class="banner banner-image" style="background-image: url({{cover}});">
-    <view class="banner-info" style="width: 80%;">
-        <view class="banner-title">{{title}}</view>
-        <view>
-            <text wx:if="{{date}}">发表于 {{pipe.datePipe(date)}}</text>
-            <text wx:if="{{date && updated}}"> | </text>
-            <text wx:if="{{updated}}">更新于 {{pipe.datePipe(updated)}}</text>
-        </view>
+    <view class="banner-info" style="width: 80%;"></view>
+</view>
+
+<view class="post-head" wx:if="{{title}}">
+    <view class="post-title">{{title}}</view>
+    <view>
+        <text wx:if="{{date}}">发表于 {{pipe.datePipe(date)}}</text>
+        <text wx:if="{{date && updated}}"> | </text>
+        <text wx:if="{{updated}}">更新于 {{pipe.datePipe(updated)}}</text>
     </view>
 </view>
 

@@ -5,9 +5,14 @@ Page({
      */
     data: {
         swiperList: [{
-            "title": "Hello World",
-            "path": "api/articles/hello-world.json",
-            "cover": "https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"
+            "path": "api/articles/影响力笔记.json",
+            "cover": "https://cdn.jsdelivr.net/gh/huangruoqiu/HexoPicture/cover/%E5%BD%B1%E5%93%8D%E5%8A%9B%E7%AC%94%E8%AE%B0.PNG"
+        }, {
+            "path": "api/articles/中国银行面试复盘.json",
+            "cover": "https://cdn.jsdelivr.net/gh/huangruoqiu/HexoPicture/cover/%E4%B8%AD%E5%9B%BD%E9%93%B6%E8%A1%8C%E9%9D%A2%E8%AF%95%E5%A4%8D%E7%9B%98.PNG"
+        }, {
+            "path": "api/articles/Angular自定义属性型指令.json",
+            "cover": "https://cdn.jsdelivr.net/gh/huangruoqiu/HexoPicture/cover/Angular%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E5%9E%8B%E6%8C%87%E4%BB%A4.PNG"
         }],
         postList: [],
         pageNum: 1,
