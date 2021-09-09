@@ -4,6 +4,23 @@
             <view class="release-latest">latest release</view>
             <view class="release-commit">
                 <mp-icon icon="pencil" color="#9c9c9c" size="{{16}}"></mp-icon>
+                705299e
+            </view>
+        </view>
+        <view class="release-content">
+            <view class="release-content-title">v1.0.1</view>
+            <view class="release-time">2021/09/09</view>
+            <view class="content-category">Fixes</view>
+            <view class="content-item">
+                <view>1. 封面设计风格的修改，导致样式调整</view>
+                <view>2. 修复云函数获取文章详情失败的问题</view>
+            </view>
+        </view>
+    </view>
+    <view class="release">
+        <view class="release-info">
+            <view class="release-commit">
+                <mp-icon icon="pencil" color="#9c9c9c" size="{{16}}"></mp-icon>
                 b7bd09b
             </view>
         </view>
