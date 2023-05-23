@@ -39,6 +39,6 @@ var collect = (url, collectionName) => {
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-    collect('https://huangruoqiu.github.io/api/posts.json', 'postList')
-    collect('https://huangruoqiu.github.io/api/tags.json', 'tagList')
+    collect('https://freelibrary.top/api/posts.json', 'postList')
+    collect('https://freelibrary.top/api/tags.json', 'tagList')
 }

@@ -71,7 +71,7 @@ Page({
                 title: '',
                 date: '',
                 updated: '',
-                cover: 'https://huangruoqiu.github.io/img/404.jpg',
+                cover: 'https://freelibrary.top/img/404.jpg',
                 covers: []
             })
         })

@@ -1,6 +1,6 @@
 {
-  "usingComponents": {
-    "post-list": "../../components/postList/postList"
-  },
-  "enablePullDownRefresh": true
+	"usingComponents": {
+		"post-list": "../../components/postList/postList"
+	},
+	"enablePullDownRefresh": true
 }

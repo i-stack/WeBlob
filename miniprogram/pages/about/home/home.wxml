@@ -6,7 +6,7 @@
 </view>
 
 <view class="about-section">
-    <view class="about-info" bindtap="copyUrl" data-url="https://huangruoqiu.github.io">
+    <view class="about-info" bindtap="copyUrl" data-url="https://freelibrary.top">
         <image src="../../../images/newspaper-fill.png" class="about-image"></image>
         <text decode="{{true}}">&nbsp;&nbsp;博客地址</text>
         <mp-icon icon="arrow" color="#9c9c9c" size="{{16}}" class="about-icon"></mp-icon>

@@ -63,7 +63,7 @@ exports.main = async (event, context) => {
                 }
             })
         case 'postDetail':
-            const url = 'https://huangruoqiu.github.io/' + encodeURI(event.url)
+            const url = 'https://freelibrary.top/' + encodeURI(event.url)
             return await rp(url)
                 .then(res => {
                     return JSON.parse(res)
