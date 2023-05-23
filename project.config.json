@@ -35,7 +35,9 @@
 		"packNpmRelationList": [],
 		"minifyWXSS": true,
 		"showES6CompileOption": false,
-		"condition": false
+		"condition": false,
+		"ignoreDevUnusedFiles": false,
+		"ignoreUploadUnusedFiles": false
 	},
 	"appid": "wx0660026ede13a7db",
 	"projectname": "WeBlog",

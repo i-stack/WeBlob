@@ -3,7 +3,18 @@ Page({
     /**
      * 页面的初始数据
      */
-    data: {},
+	data: {},
+	
+	copyUrl(e) {
+		wx.setClipboardData({
+			data: e.currentTarget.dataset.url,
+			success() {
+				wx.showToast({
+					title: '地址已复制'
+				})
+			}
+		})
+	},
 
     openUrl(e) {
 		const url = e.currentTarget.dataset.url;
@@ -60,12 +71,3 @@ Page({
      */
     onShareAppMessage: function () { }
 })
-
-// wx.setClipboardData({
-//     data: e.currentTarget.dataset.url,
-//     success() {
-//         wx.showToast({
-// 			title: '地址已复制'
-// 		})
-//     }
-// })
