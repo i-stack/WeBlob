@@ -4,6 +4,6 @@
 	"projectname": "Blog",
 	"setting": {
 		"compileHotReLoad": true,
-		"urlCheck": false
+		"urlCheck": true
 	}
 }

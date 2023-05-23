@@ -18,3 +18,11 @@
 <view class="post-content">
     <towxml nodes="{{post}}"></towxml>
 </view>
+
+<view class="post-content" bindtap="openUrl" data-url="{{abbrlink}}" data-title="{{title}}" style=" text-align: right; padding-right: 10px; height: 30px; padding-top: 10px;">
+    <text decode="{{true}}" style="color: #006EFF;">&nbsp;&nbsp;查看原文</text>
+</view>
+
+<view class="post-content">
+    <text decode="{{true}}">&nbsp;&nbsp;</text>
+</view>

@@ -1,79 +1,130 @@
+const app = getApp();
+const { it } = require("../../towxml/parse/parse2/entities/maps/entities")
+
 Page({
     /**
      * 页面的初始数据
      */
     data: {
-        swiperList: [{
-            "path": "api/articles/项目代理/信用卡.json",
-            "cover": "https://cdn.jsdelivr.net/gh/huangruoqiu/HexoPicture/cover/%E5%BD%B1%E5%93%8D%E5%8A%9B%E7%AC%94%E8%AE%B0.PNG"
-        }, {
-            "path": "api/articles/项目代理/信用卡.json",
-            "cover": "https://cdn.jsdelivr.net/gh/huangruoqiu/HexoPicture/cover/%E4%B8%AD%E5%9B%BD%E9%93%B6%E8%A1%8C%E9%9D%A2%E8%AF%95%E5%A4%8D%E7%9B%98.PNG"
-        }, {
-            "path": "api/articles/项目代理/信用卡.json",
-            "cover": "https://cdn.jsdelivr.net/gh/huangruoqiu/HexoPicture/cover/Angular%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E5%9E%8B%E6%8C%87%E4%BB%A4.PNG"
-        }],
+        swiperList: [
+			{
+				"path": "api/articles/项目代理/信用卡.json",
+				"cover": `${app.globalData.domain}/images/信用卡/WechatIMG1573.jpeg`
+			},
+			{
+				"path": "api/articles/项目代理/百度网盘超低价SVIP会员.json",
+				"cover": `${app.globalData.domain}/images/百度网盘/040516194698_05681680682725.jpg`
+			},
+			{
+				"path": "api/articles/项目代理/创业项目诚招代理.json",
+				"cover": `${app.globalData.domain}/images/资源整合平台/WechatIMG495.jpeg`
+			}
+		],
+		postFilterList: [],
         postList: [],
         pageNum: 1,
         pageSize: 10,
         isLoading: false,
         isLoadingComplete: false
-    },
+	},
 
-    getPostList() {
-
+	getPostFilterList() {
+		let that = this;
 		wx.request({
-			url: 'https://freelibrary.top/api/articles/%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%90%86/%E4%BF%A1%E7%94%A8%E5%8D%A1.json',
+			url: `${app.globalData.domain}/postFilterList.json`,
 			header: {
 			  'content-type': 'application/json'
 			},
 			success: res => {
-			  console.log(res.data)
-			  this.setData({
-				//第一个data为固定用法
-				isLoading: false,
-                postList: this.data.postList.concat(res.data)
-				
-			  })
+				console.log(res.data)
+				let filterList = res.data.list
+				if (filterList && filterList.length) {
+					that.setData({
+						postFilterList: filterList
+					})
+				}
+				that.getPostList()
+			}, fail: err => {
+				console.error('swiperList', err)
+				that.getPostList()
 			}
-		  })
+		})
+	},
+	
+	getSwiperList() {
+		let that = this;
+		wx.request({
+			url: `${app.globalData.domain}/swiperList.json`,
+			header: {
+			  'content-type': 'application/json'
+			},
+			success: res => {
+				console.log(res.data)
+				let swiperList = res.data.swiperList
+				if (swiperList && swiperList.length) {
+					that.setData({
+						swiperList: swiperList
+					})
+				}
+			}, fail: err => {
+				console.error('swiperList', err)
+			}
+		})
+	},
 
-
-
-        // const db = wx.cloud.database();
-        // const _ = db.command;
-
-        // db.collection('postList')
-        //     .where({
-        //         _id: _.exists(true)
-        //     })
-        //     .skip((this.data.pageNum - 1) * this.data.pageSize) // 跳过结果集中的前 n 条，从第 n+1 条开始返回
-        //     .limit(this.data.pageSize) // 限制返回数量为 10 条
-        //     .get()
-        //     .then(res => {
-        //         if (this.data.pageNum === 1) {
-        //             wx.stopPullDownRefresh()
-        //         }
-        //         if (res.data.length < this.data.pageSize) {
-        //             this.setData({
-        //                 isLoadingComplete: true
-        //             })
-        //         }
-        //         this.setData({
-        //             isLoading: false,
-        //             postList: this.data.postList.concat(res.data)
-        //         })
-        //     })
-        //     .catch(err => {
-        //         console.error('获取postList失败', err)
-        //         wx.showToast({
-        //             icon: 'error',
-        //             title: '获取文章失败'
-        //         })
-        //         this.setData({
-        //             isLoading: false
-        //         })
-        //     })
+    getPostList() {
+		let that = this;
+		wx.request({
+			url: `${app.globalData.domain}/api/posts.json`,
+			header: {
+			  'content-type': 'application/json'
+			},
+			success: res => {
+				console.log(res.data)
+				if (this.data.pageNum === 1) {
+                    wx.stopPullDownRefresh()
+                }
+				let datas = res.data
+				let newData = []
+				for (let i = 0; i < datas.length; i++) {
+					let item = datas[i];
+					let showItem = true; 
+					for (let j = 0; j < item.tags.length; j++) {
+						let tagItem = item.tags[j]
+						for (let k = 0; k < that.data.postFilterList.length; k++) {
+							let filter = that.data.postFilterList[k];
+							if (filter.tag == tagItem.name) {
+								showItem = false;
+								break;
+							}
+						}
+						if (!showItem) break;
+					}
+					if (!item.cover) {
+						item.cover = `${app.globalData.domain}/images/bg_img.jpg`
+					} else if (!item.cover.includes("https://") && !item.cover.includes("http://")) {
+						item.cover = `${app.globalData.domain}${item.cover}`
+					}
+					if (showItem) {
+						newData.push(item)
+					}
+				}
+                that.setData({
+					isLoading: false,
+					isLoadingComplete: true,
+                    postList: that.data.postList.concat(newData)
+                })
+			}, fail: err => {
+				console.error('获取postList失败', err)
+                wx.showToast({
+                    icon: 'error',
+                    title: '获取文章失败'
+                })
+                that.setData({
+                    isLoading: false
+                })
+			}
+		})
     },
 
     navigateToPostDeatail(e) {
@@ -86,7 +137,8 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.getPostList()
+		this.getPostFilterList()
+		this.getSwiperList()
     },
 
     /**
@@ -126,14 +178,14 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-        if (!this.data.isLoadingComplete) {
-            let currentPageNum = this.data.pageNum
-            this.setData({
-                isLoading: true,
-                pageNum: currentPageNum + 1
-            })
-            this.getPostList()
-        }
+        // if (!this.data.isLoadingComplete) {
+        //     let currentPageNum = this.data.pageNum
+        //     this.setData({
+        //         isLoading: true,
+        //         pageNum: currentPageNum + 1
+        //     })
+        //     this.getPostList()
+        // }
     },
 
     /**

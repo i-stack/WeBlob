@@ -1,6 +1,7 @@
 // pages/tagPostList/tagPostList.js
-Page({
+const app = getApp();
 
+Page({
     /**
      * 页面的初始数据
      */
@@ -10,23 +11,40 @@ Page({
     },
 
     getPostList(tag) {
-        wx.cloud.callFunction({
-            name: 'http',
-            data: {
-                type: 'tagPostList',
-                param: tag
-            }
-        }).then((res) => {
-            this.setData({
-                postList: res.result.data
-            })
-        }).catch((err) => {
-            console.error('获取tagPostList失败', err)
-            wx.showToast({
-                icon: 'error',
-                title: '获取文章失败'
-            })
-        })
+		let that = this;
+		wx.request({
+			url: `${app.globalData.domain}/api/tags/${tag}.json`,
+			header: {
+			  	'content-type': 'application/json'
+			},
+			success: res => {
+				console.log(res.data)
+				let postlist = res.data.postlist
+				for (let i = 0; i < postlist?.length; i++) {
+					let item = postlist[i];
+					let needUpdate = false
+					if (!item.cover) {
+						needUpdate = true
+						item.cover = `${app.globalData.domain}/images/bg_img.jpg`
+					} else if (!item.cover.includes("https://") && !item.cover.includes("http://")) {
+						needUpdate = true
+						item.cover = `${app.globalData.domain}${item.cover}`
+					}
+					if (needUpdate) {
+						postlist[i] = item;
+					}
+				}
+				that.setData({
+					postList: res.data.postlist
+				})
+			}, fail: err => {
+				console.error('获取tagPostList失败', err)
+				wx.showToast({
+					icon: 'error',
+					title: '获取文章失败'
+				})
+			}
+		})
     },
 
     /**

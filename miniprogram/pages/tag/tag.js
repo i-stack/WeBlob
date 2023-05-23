@@ -1,5 +1,6 @@
-Page({
+const app = getApp();
 
+Page({
     /**
      * 页面的初始数据
      */
@@ -10,23 +11,26 @@ Page({
     },
 
     getTagList() {
-        wx.cloud.callFunction({
-            name: 'http',
-            data: {
-                type: 'tagList'
-            }
-        }).then((res) => {
-            this.setData({
-                tagList: res.result.data.map(item => item.name)
-            })
-            this.setColorList(res.result.data.length)
-        }).catch((err) => {
-            console.error('获取tagList失败', err)
-            wx.showToast({
-                icon: 'error',
-                title: '获取标签失败'
-            })
-        })
+		let that = this;
+		wx.request({
+			url: `${app.globalData.domain}/api/tags.json`,
+			header: {
+			  	'content-type': 'application/json'
+			},
+			success: res => {
+				console.log(res.data)
+				that.setData({
+					tagList: res.data.map(item => item.name)
+				})
+				that.setColorList(res.data.length)
+			},fail: err => {
+				console.error('获取tagList失败', err)
+				wx.showToast({
+					icon: 'error',
+					title: '获取标签失败'
+				})
+			}
+		})
     },
 
     setColorList(len) {

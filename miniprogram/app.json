@@ -39,12 +39,13 @@
     "window": {
         "backgroundTextStyle": "dark",
         "navigationBarBackgroundColor": "#3289FF",
-        "navigationBarTitleText": "美丽新世界",
+        "navigationBarTitleText": "辰沙博客",
         "navigationBarTextStyle": "white"
     },
     "sitemapLocation": "sitemap.json",
     "style": "v2",
     "useExtendedLib": {
         "weui": true
-    }
+	},
+	"lazyCodeLoading": "requiredComponents"
 }
