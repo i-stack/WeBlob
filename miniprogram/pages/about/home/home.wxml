@@ -1,17 +1,17 @@
 <view class="banner banner-image">
     <view class="banner-info">
-        <view>美丽新世界</view>
-        <view>By 波函数</view>
+        <view>辰沙博客</view>
+        <view>By 辰沙</view>
     </view>
 </view>
 
 <view class="about-section">
-    <view class="about-info" bindtap="copyUrl" data-url="https://freelibrary.top">
+    <view class="about-info" bindtap="openUrl" data-url="https://freelibrary.top" data-title="辰沙资源">
         <image src="../../../images/newspaper-fill.png" class="about-image"></image>
         <text decode="{{true}}">&nbsp;&nbsp;博客地址</text>
         <mp-icon icon="arrow" color="#9c9c9c" size="{{16}}" class="about-icon"></mp-icon>
     </view>
-    <view class="about-info" bindtap="copyUrl" data-url="https://github.com/huangruoqiu">
+    <view class="about-info" bindtap="openUrl" data-url="https://github.com/i-stack/WeBlob.git" data-title="i-stack">
         <image src="../../../images/github-fill.png" class="about-image"></image>
         <text decode="{{true}}">&nbsp;&nbsp;GitHub</text>
         <mp-icon icon="arrow" color="#9c9c9c" size="{{16}}" class="about-icon"></mp-icon>

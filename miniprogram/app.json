@@ -2,7 +2,8 @@
     "cloud": true,
     "pages": [
         "pages/home/home",
-        "pages/tag/tag",
+		"pages/tag/tag",
+		"pages/webview/webview",
         "pages/about/home/home",
         "pages/about/mumble/mumble",
         "pages/about/updateLog/updateLog",

@@ -1,20 +1,17 @@
 // pages/about/home/home.js
 Page({
-
     /**
      * 页面的初始数据
      */
     data: {},
 
-    copyUrl(e) {
-        wx.setClipboardData({
-            data: e.currentTarget.dataset.url,
-            success() {
-                wx.showToast({
-                    title: '地址已复制'
-                })
-            }
-        })
+    openUrl(e) {
+		const url = e.currentTarget.dataset.url;
+		const navtitle = e.currentTarget.dataset.title;
+		wx.navigateTo({
+			// 跳转到webview页面
+			url: `/pages/webview/webview?url=${url}&nav=${navtitle}`
+		});
     },
 
     navigate(e) {
@@ -63,3 +60,12 @@ Page({
      */
     onShareAppMessage: function () { }
 })
+
+// wx.setClipboardData({
+//     data: e.currentTarget.dataset.url,
+//     success() {
+//         wx.showToast({
+// 			title: '地址已复制'
+// 		})
+//     }
+// })
